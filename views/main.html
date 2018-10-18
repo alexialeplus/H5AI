@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>My H5ai</title>
+    <link rel="stylesheet" href="http://localhost/my_h5ai/public/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="http://localhost/my_h5ai/public/script.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark text-white mb-4">
+            <p>
+                {foreach from=$path key=$file item=$track}
+                    <a href={$track}> {$file} </a> >
+                {/foreach}
+            </p>
+            <h1 class="font-weight-light"> My H5ai </h1>
+        </nav>
+
+        <main id="main" class="row">
+            <div id="head">
+                <p class="col-4 offset-4"> Nom </p>
+                <p class="col-2"> Modifié le </p>
+                <p class="col-2"> Taille </p>
+            </div>
+            <div id="left" class="col-4">
+                {$listFolders}
+            </div>
+            <div id="right" class="col-8">
+                <div id="rightContent">
+                    {$listFiles}
+                </div>
+            </div>
+        </main>
+
+        <div id="overlay">
+            <p> Coucou </p>
+        </div>
+    </div>
+
+</body>
+</html>
